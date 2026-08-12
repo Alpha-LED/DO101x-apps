@@ -12,10 +12,20 @@ app.get('/', function (req, res) {
 
 });
 
-app.get('/readiness/healz', function (req, res) {
+app.get('/readiness/healthz', function (req, res) {
 
   
-    console.log("readu to server, successfully passed")
+    console.log("ready to serve, successfully passed")
+
+    //send the response to the client
+    res.send(response);
+
+});
+
+app.get('/liveness/healthz', function (req, res) {
+
+  
+    console.log("live  serving, successfully passed")
 
     //send the response to the client
     res.send(response);
