@@ -14,7 +14,7 @@ router.post('/get_weather', async function (req,res) {
   let city = req.body.city;
   let lat = req.body.lat;
   let lon = req.body.lon;
-  let url = `http://api.openweathermap.org/data/4.0/onecall/current?lat={$lat}&lon={$lon}&appid=${OWM_API_KEY}`;
+  let url = `http://api.openweathermap.org/data/4.0/onecall/current?lat=${lat}&lon=${lon}&units=${UNITS}&appid=${OWM_API_KEY}`;
 
   try {
     let data = await fetch(url);
